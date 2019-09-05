@@ -101,7 +101,7 @@
 
 @media all and (max-width: 544px) {
     .parallax {
-        height: 750px !important;
+        height: 1000px !important;
     }
 }
 
