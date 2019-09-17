@@ -47,9 +47,9 @@ class validation{
 	}
 
 	public static function password(){
-		if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', self::$value[self::$currentvalue])){
-			self::$error = '<div class="alert alert-danger">Password is too weak</div>';
-		}
+		//if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', self::$value[self::$currentvalue])){
+			//self::$error = '<div class="alert alert-danger">Password is too weak</div>';
+		//}
 	}
 
 	public static function emptyfiles($name){

@@ -49,7 +49,7 @@ class timeline{
             //$upload = 'images/profile/' . $uniqname;
             $upload = 'images/others/'.$uniqname;
             $body = validation::$value['body'];
-            $body = nl2br($_REQUEST['body']);
+            $body = nl2br($body);
             $body = helper::mention($body);
 
             move_uploaded_file($tmpname , $upload);
@@ -99,7 +99,7 @@ class timeline{
 
           if(validation::submit()){
             $body = validation::$value['body'];
-            $body = nl2br($_REQUEST['body']);
+            $body = nl2br($body);
             $body = helper::mention($body,$type=2);
             $table ="post";
 
