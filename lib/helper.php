@@ -51,7 +51,7 @@
  		try {
  				//Server settings
  				$mail->SMTPDebug = 2;                                       // Enable verbose debug output
- 				$mail->Host       = 'safayat.a2hosted.com';                 // Specify main and backup SMTP servers
+ 				$mail->Host       = $_SERVER['HTTP_HOST'];                 // Specify main and backup SMTP servers
  				$mail->SMTPAuth   = true;                                   // SMTP password
  				$mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
  				$mail->Port       = 587;                                    // TCP port to connect to

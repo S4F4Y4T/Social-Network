@@ -108,7 +108,11 @@ class timeline{
               'body'    => $body
             );
 
-            DB::insertdata($data,$table);
+            $posted = DB::insertdata($data,$table);
+			if($posted){
+				
+				header("Location:profile.php");
+			}
 
           } else {
             return validation::$error;
@@ -116,8 +120,6 @@ class timeline{
         }
 
       }
-      Session::destroy();
-      header("Location:profile.php");
     }
   }
 
@@ -187,6 +189,7 @@ class timeline{
 
             DB::update($post_data,$requr);
             header("Location:#".$data['post_id']);
+			exit();
           }
 
           //notification section

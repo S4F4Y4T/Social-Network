@@ -1,5 +1,5 @@
 <?php
-  error_reporting(0);
+  error_reporting(1);
   include_once "./config/config.php";
   include_once'classes/user.php';
 
@@ -7,11 +7,6 @@
     include'lib/'.$class.'.php';
   });
 
-   //set headers to NOT cache a page
-   header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1
-   header("Pragma: no-cache"); //HTTP 1.0
-   header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
-   // Date in the past
 
    $cstrong  = true;
    $token    = bin2hex(openssl_random_pseudo_bytes(64, $cstrong));
