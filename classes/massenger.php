@@ -115,7 +115,7 @@
   }
 
   public static function read(){
-    $receiver = $_GET['receiver'];
+    $receiver = isset($_GET['receiver']);
 
     $data = array(
         'wherecond'  => array('where'  =>array('sender' => $receiver, 'receiver' => Session::isloggedin()))
