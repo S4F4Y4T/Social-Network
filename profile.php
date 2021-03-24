@@ -8,7 +8,7 @@
   }
 
   if($_SERVER['REQUEST_METHOD'] == 'POST' && ISSET($_POST['post'])){
-      $post = timeline::post($_POST);
+      $post = post::post($_POST);
   }
 
   if($_SERVER['REQUEST_METHOD'] == 'POST' && ISSET($_POST['like'])){
@@ -16,7 +16,7 @@
   }
 
   if($_SERVER['REQUEST_METHOD'] == 'POST' && ISSET($_POST['comment'])){
-      $post = timeline::comment($_POST);
+      $post = comment::comment($_POST);
   }
 
  include_once"profile-header.php";
@@ -74,7 +74,7 @@
         <div class="col-md-12">
           <ul class="img-grid" style="margin: 0 auto;">
             <?php
-              $photos = timeline::timelinephotos();
+              $photos = photo::timelinephotos();
               if($photos){
               foreach($photos as $result){
             ?>
@@ -151,7 +151,7 @@
 
   <?php
 }
-    $post = timeline::fetchpost();
+    $post = fetchposts::fetchpost();
     if($post){
     foreach($post as $value){
   ?>
@@ -191,7 +191,7 @@
     <div class="box-footer box-comments" style="display: block;">
 
     <?php
-      $comment = timeline::fetchcomment($value['post_id']);
+      $comment = comment::fetchcomment($value['post_id']);
       foreach($comment as $val){
     ?>
 

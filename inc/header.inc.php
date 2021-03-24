@@ -25,7 +25,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/others/favicon.png">
-    <title>DayDay</title>
+    <title>S4F4Y4T-SOCAIL</title>
     <!-- Bootstrap core CSS -->
     <link href="assets/bootstrap.3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/font-awesome.4.6.1/css/font-awesome.min.css" rel="stylesheet">
@@ -57,7 +57,7 @@
             <span class="icon-bar bar2"></span>
             <span class="icon-bar bar3"></span>
           </button>
-          <a class="navbar-brand" href="/">Day-Day</a>
+          <a class="navbar-brand" href="/">S4F4Y4T-SOCAIL</a>
         </div>
       </div>
     </nav>

@@ -6,6 +6,10 @@
   include_once'classes/userprofile.php';
   include_once'classes/timeline.php';
   include_once'classes/massenger.php';
+  include_once'classes/comment.php';
+  include_once'classes/fetchposts.php';
+  include_once'classes/photo.php';
+  include_once'classes/posts.php';
 
   spl_autoload_register(function($class){
     include'lib/'.$class.'.php';
@@ -37,7 +41,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
     <link rel="icon" href="images/others/favicon.png">
-    <title>day-day</title>
+    <title>S4F4Y4T-SOCAIL</title>
     <!-- Bootstrap core CSS -->
     <link href="assets/bootstrap.3.3.6/css/bootstrap.min.css?v=2.6" rel="stylesheet">
     <link href="assets/font-awesome.4.6.1/css/font-awesome.min.css" rel="stylesheet">
@@ -78,7 +82,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href=""><b>DayDay</b></a>
+            <a class="navbar-brand" href=""><b>S4F4Y4T-SOCIAL</b></a>
           </div>
 
 
