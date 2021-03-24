@@ -8,7 +8,7 @@
   }
 
   if($_SERVER['REQUEST_METHOD'] == 'POST' && ISSET($_POST['post'])){
-      $post = post::post($_POST);
+      $post = posts::post($_POST);
   }
 
   if($_SERVER['REQUEST_METHOD'] == 'POST' && ISSET($_POST['like'])){

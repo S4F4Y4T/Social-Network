@@ -17,23 +17,21 @@ class posts{
               validation::post($data,'body')::xss()::isempty();
     
               if(validation::submit()){
-                $destination_path = getcwd().DIRECTORY_SEPARATOR;
-                //$upload = 'images/profile/' . $uniqname;
+
                 $upload = 'images/others/'.$uniqname;
-                $body = validation::$value['body'];
-                $body = nl2br($body);
-                $body = helper::mention($body);
     
                 move_uploaded_file($tmpname , $upload);
     
+                $body = validation::$value['body'];
+                $body = nl2br($body);
+                $body = helper::mention($body,$type=2);
                 $table ="post";
     
                 $data = array(
                   'user_id' => Session::isloggedin(),
-                  'body'    => $body,
-                  'post_image'   => $uniqname
+                  'post_image'   => $uniqname,
+                  'body'    => $body
                 );
-    
                 DB::insertdata($data,$table);
     
               } else {
