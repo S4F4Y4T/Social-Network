@@ -11,7 +11,7 @@
   }
 
   if($_SERVER['REQUEST_METHOD'] == 'POST' && ISSET($_POST['comment'])){
-      $post = timeline::comment($_POST);
+      $post = comment::comment($_POST);
   }
   if($_SERVER['REQUEST_METHOD'] == 'POST' && ISSET($_POST['follow'])){
       userprofile::follow();
@@ -105,6 +105,7 @@
                             echo timeline::isliked($value['post_id']);
                           ?>
                           <input type='hidden' name='post_id' value='<?php echo $value['post_id']; ?>'>
+                            <input type='hidden' name='csrf' value='<?= Session::get('csrf'); ?>'>
                           <span class="pull-right text-muted">
                             <?php
                              if($value['likes'] != 0){ echo $value['likes'].' likes'; }
@@ -118,7 +119,7 @@
                       <div class="box-footer box-comments" style="display: block;">
 
                       <?php
-                        $comment = timeline::fetchcomment($value['post_id']);
+                        $comment = comment::fetchcomment($value['post_id']);
                         foreach($comment as $val){
                       ?>
 
@@ -148,6 +149,7 @@
                           <div class="img-push">
                             <input type="text" name="comment" class="form-control input-sm" placeholder="Press enter to post comment">
                             <input type="hidden" name="post_id" value="<?= $value['post_id'] ?>">
+                              <input type='hidden' name='csrf' value='<?= Session::get('csrf'); ?>'>
                           </div>
                         </form>
                       </div>

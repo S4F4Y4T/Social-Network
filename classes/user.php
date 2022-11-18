@@ -66,7 +66,7 @@ class user{
               if( !validation::verify(isset($dbemail),$email)){
                 $cstrong  = true;
                 $token    = bin2hex(openssl_random_pseudo_bytes(64, $cstrong));
-                $ver_code = rand(1,1000000);
+                $ver_code = substr(md5(rand(1,8)), 0, 8);
                 $exp_date = time() + 1800;
 
                   $data = array(
@@ -81,7 +81,7 @@ class user{
 
                   $ver_data = array(
                     'email'     => $email,
-                    'verf_code' => sha1($ver_code),
+                    'verf_code' => $ver_code,
                     'token'     => sha1($token),
                     'exp_date'  => $exp_date
                   );
@@ -92,7 +92,7 @@ class user{
 
                     $message  = "welcome to our family.To become our permanent member use the code from below to varification your account</br>";
                     $message .= "<B><h3>".$ver_code."</h3></B></br>";
-                    $message .= "Or you can use this link to reset your password ass well:<br>";
+                    $message .= "Or you can use this link to reset your password as well:<br>";
                     $message .= "<a href='".$_SERVER['HTTP_HOST']."/mailver.inc.php?token=".$token."'><b>".$_SERVER['HTTP_HOST']."/mailver.inc.php?token=".$token."</b></a><br>";
                     $message .= "This code will be valid only for 30 minutes</br>";
                     helper::mail($email,$message);
@@ -139,7 +139,7 @@ class user{
           'selectcond' => array('select' => '*'),
           'limit' 	 	 => array('start' => 1),
           'query' => array('query' => '(verf_code=:verf_code OR token=:token) AND exp_date >= :exp_date'),
-          'wherecond'=> array('where' =>array('verf_code' => sha1($code),'token' => sha1($token),'exp_date' => $current))
+          'wherecond'=> array('where' =>array('verf_code' => $code,'token' => sha1($token),'exp_date' => $current))
         );
 
         $query = DB::fetch($data);

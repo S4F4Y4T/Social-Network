@@ -1,7 +1,7 @@
 <?php
  include_once"inc/header.php";
  include_once"profile-header.php";
- $photo  = timeline::photos();
+ $photo  = photo::timelinephotos();
 ?>
 
   <div class="row">
