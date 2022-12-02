@@ -40,7 +40,7 @@ Social-Network platform will let your users to connect with eachother in more fr
 
 ### Built With
 
-This platform built on scratch PHP using OOP PHP, PHP Design Pattern and PHP PDO database and for template for frontend
+This platform built on scratch PHP using OOP PHP, PHP Design Pattern and PHP PDO Mysql and for template for frontend
 
 * [![php][php]][php-url]
 * ![mysql][mysql]
