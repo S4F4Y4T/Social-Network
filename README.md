@@ -85,7 +85,6 @@ After installing the project go to the project directory and regiter a new accou
 
 Here are some screenshots:
 
-![Screen Shot][product-screenshot-1]
 ![Screen Shot][product-screenshot-2]
 ![Screen Shot][product-screenshot-3]
 ![Screen Shot][product-screenshot-4]
