@@ -84,8 +84,10 @@ Before installing the script you need some external dependencies on your machine
 After installing the project go to the project directory and regiter a new account to login into profile 
 
 Login credentials:
+  ```sh
   username: safayat
   password: password
+  ```
 
 Here are some screenshots:
 
