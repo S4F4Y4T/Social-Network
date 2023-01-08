@@ -10,7 +10,7 @@
 
     $registration = user::registration($_POST); // sending request to server
 
-    if($registration){
+    if($registration['status']){
 
 ?>
 
@@ -28,6 +28,12 @@
 
               <form action='' class="form-horizontal" role="form" method='post'>
                 <h5><b>Mail sent to: </b> <?= $_POST['Email']; ?></h5>
+                <h3>If your server is not live then mail should not be sent so here is your Mail: </h3>
+                <p>
+                    <?php
+                        print_r($registration['message']);
+                    ?>
+                </p>
                 <div class="form-group">
                   <div class="col-md-12">
                     <input type="name" name='ver_code' class="form-control" placeholder="verification code">

@@ -93,29 +93,29 @@ class user{
                     $message  = "welcome to our family.To become our permanent member use the code from below to varification your account</br>";
                     $message .= "<B><h3>".$ver_code."</h3></B></br>";
                     $message .= "Or you can use this link to reset your password as well:<br>";
-                    $message .= "<a href='".$_SERVER['HTTP_HOST']."/mailver.inc.php?token=".$token."'><b>".$_SERVER['HTTP_HOST']."/mailver.inc.php?token=".$token."</b></a><br>";
+                    $message .= "<a href='".BASE."/mailver.inc.php?token=".$token."'><b>Click Here</b></a><br>";
                     $message .= "This code will be valid only for 30 minutes</br>";
                     helper::mail($email,$message);
 
-                    return true;
+                    return ['status' => true, 'message' => $message];
 
                   } else {
-                    header("Location:/?msg=".urlencode(serialize('<div class="alert alert-danger">Error!Something Went Wrong</div>')));
+                    header("Location:".BASE."?msg=".urlencode(serialize('<div class="alert alert-danger">Error!Something Went Wrong</div>')));
                   }
                 } else {
-                  header("Location:/?msg=".urlencode(serialize('<div class="alert alert-danger">Email Already In Use</div>')));
+                  header("Location:".BASE."?msg=".urlencode(serialize('<div class="alert alert-danger">Email Already In Use</div>')));
                 }
             } else {
-              header("Location:/?msg=".urlencode(serialize('<div class="alert alert-danger">Username Already Taken</div>')));
+              header("Location:".BASE."?msg=".urlencode(serialize('<div class="alert alert-danger">Username Already Taken</div>')));
             }
           } else {
-            header("Location:/?msg=".urlencode(serialize('<div class="alert alert-danger">Confirmation Password Didnt Match</div>')));
+            header("Location:".BASE."?msg=".urlencode(serialize('<div class="alert alert-danger">Confirmation Password Did not Match</div>')));
           }
         } else {
-          header("Location:/?msg=".urlencode(serialize(validation::$error)));
+          header("Location:".BASE."?msg=".urlencode(serialize(validation::$error)));
         }
       } else {
-        header("Location:/");
+        header("Location:".BASE."");
       }
     }
 
@@ -204,10 +204,10 @@ class user{
             }
           }
         } else {
-          header("Location:/?msg=".urlencode(serialize("<div class='alert alert-danger'>invalid token OR verification code</div>")));
+          header("Location:".BASE."?msg=".urlencode(serialize("<div class='alert alert-danger'>invalid token OR verification code</div>")));
         }
       } else {
-        header("Location:/");
+        header("Location:".BASE."");
       }
     }
 
